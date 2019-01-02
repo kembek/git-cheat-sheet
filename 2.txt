@@ -1,0 +1,46 @@
+git init -- служит для инициализации пустого репозитория
+
+git status -- проверка статуса файлов в репозитории
+
+git add <fileName> -- добавление в индекс
+git add . 
+    добавляет все файлы из рабочей директории в index
+
+git commit -- сохранение в истории репозитория
+
+git show <commitHash>
+    просмотреть текущий коммит, можно также просмотреть определенный коммит указ его хеш в commitHash
+
+git show --pretty=fuller
+    флаг используется для 
+
+git reset HEAD [catalogs|files]
+    команда для отмены добавления файла из индекса
+stx: 
+    git status
+    git reset HEAD index.html
+
+git commit без add 
+    -- Важно!! Команды ниже работают если файлы про индексированы
+    > git commit -a
+        stx: git commit -am "message"
+    > git commit <paths>
+        коммит для определенного файла по указанному пути
+    -- Для обхода ограничений можно создать алиас
+    > git config --global alias.commitall "!git add .;git commit"
+        stx: git commitall -m "Commit message"
+
+git rm <paths>
+    команда для удаления из рабочей папки и репозитории
+    > -r 
+        флаг для удаления папки
+        stx: git rm -r <directory>
+    > -f
+        флаг для удаления с пропуском предупреждений
+        stx: git rm -f <paths>
+    > --cashed
+        флаг для удаления из индекса
+        stx: git rm --cashed <paths>
+
+git mv <old> <new>
+    команда для переименования 
