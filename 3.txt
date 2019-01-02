@@ -1,0 +1,70 @@
+Ветки
+
+git branch <branchName>
+    для просмотра веток в текущей репозитории, если указан branchName команда создает ветку
+    stx: git branch newBranch
+    > -v --verbose
+        флаг для команды используется для дополнительного просмотра названия самой ветки, хеш-коммита, и заголовок коммита
+    > -d <branchName>
+        флаг для удаления ветки, если она в верхнем индексе она удалеят без предупреждения
+        stx: git branch -d|-D fix
+
+git checkout <branchName> 
+    для перехода на другую ветку (branchName)
+    > -b --branch <branchName>
+        при запуске команды с этим флагом и указав branchName, мы создаем ветку и переключаемся на нее
+        stx: git checkout -b newBranch
+    > -f --force <branchName>
+        если есть какие-то изменения, то они сбрасываются (изменения текущей ветки) и переходится на другую ветку
+        stx: git checkout -f otherBranch
+        также если мы добавили изменения в индекс можно удалить из с помощью команды, так как если не указывать название ветки то ставится текущия по умолчанию
+        stx: git checkout -f
+
+git reflog <branchName>
+    для показа истории ветки, если она не указана то всю историю всех веток до текущей истории
+
+git log 
+    для показа истории ветки
+
+git gc 
+    для запуска сборщика мусора
+
+git checkout [HEAD|commitHash|branchName] <paths>
+    paths указываются имена файлов которые сбросят все изменения (т.е. возьмет все из индекса), если есть и HEADS то начальные значения берутся из репозитория
+    stx: 
+        - git checkout index.html
+        - git checkout -- master
+        если имя папки похожа на ветку или коммит то нужно указать перед путем два дефиса
+
+git stash 
+    архивирует все изменения, также они достпуны в любой ветке. ВАЖНО!! Это команда не коммитит!
+
+git stash pop
+    возвращает все изменения из архива в любую ветку
+
+git show [HEAD|@|commitHash|branchName]~ <paths>
+    это команда показывает историю файлов, HEAD и @(собачка, краtкая запись HEAD) это текущий репозиторий, ~(тильда) означает сколько шагов назад нужно сделать
+    stx: git show @~~~ === git show @~3
+    если указать paths то просматривается история изменения лишь в этом файлем
+    stx: git show @~2:index.html
+    просмотр файла без изменений
+    stx: git checkout @~2 index.html
+    изменить файл на указанный момент, (точнее на два коммита назад)
+
+git merge <branchName>
+    команда для слияния веток, она создает заголовок ORIG_HEAD для удобного отката слияния
+    -- current branch: master
+    stx: git merge fix
+    git branch -f master ORIG_HEAD -- для отката слияния
+
+Рецепт по передвижению ветки в ручную
+    git checkout <branchName>
+    git branch -f <branchName> <otherBranch|commitHash>
+    -- короткая запись, которая сама перейдет на другую ветку с на указанный хеш
+    git checkout -B <branchName> <commitHash>
+    stx: 
+        -- current branch: master
+        git checkout fix
+        git branch -f master 5434
+        ---------------------------
+        git checkout -B master 5424
