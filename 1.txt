@@ -1,0 +1,41 @@
+GIT --- Децентрализованная система контроля версий
+
+git config служит для конфигурирование резопозитирия, глобальных настроек для работы с проектом (репозотирем). 
+stx: git config user.name "kembek"
+    user - это секция
+    name - свойство
+git config --global core.editor "'C:\Program Files\Microsoft VS Code\Code.exe' -w"
+
+git config [--global|--system|--local(default)] 
+    он имеет три флага для разного уровня кофигурации
+
+git config user.name --unset
+    удаление свойства секции
+
+git config --remove-section user 
+    удаление секции
+
+git config --list
+    вывести весь список конигурации
+
+cat ~/.gitconfig
+    для просмотра содержимого конигурации в данном случаии глобального
+
+~(тильда) - обозначает корневой каталог
+stx: cd ~
+
+git help [config|...имя команды] - служит справочником для команды
+
+git help attributes
+    рекомендуется использовать .gitattributes для нормальной работы файлов 
+
+git check-ignore -v <path>
+    проверка игнорирования
+stx: git check-ignore -v package.json
+
+git config --global alias.c 'config' 
+    создание алиаса для команды
+stx: git c --list
+
+git config alias.multi '!git add ..; git commit;...'
+    также можно создавать алиасы нескольких команд git и не только т.е. комманд оболочки(Linux, Windows)

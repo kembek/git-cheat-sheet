@@ -1,0 +1,27 @@
+# OS-level helper files (cache, folder preferences)
+Thumbs.db
+# path/to/anywhere/Thumbs.db
+.DS_Store
+# any/folder/.DS_Store
+
+# Logs
+*.log
+# anywhere/my.log, NOT my.logs, my.log.tmp
+
+# Compiled files
+*.class
+*.py[co]
+# same as: *.pyc OR *.pyo, NOT *.pyco
+
+migrate-201[5-7]*
+# anywhere/migrate-2015, migrate-20170101.db, NOT migrate-2018...
+
+*.py?
+# anywhere/*.py<any char>, *.pyc OR *.pyo, NOT *.py
+
+# slash at the end means a folder
+build/
+# folder "build", NOT file "build
+# pattern above match anywhere in the project
+# build/
+# sctipts/build

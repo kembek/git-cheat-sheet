@@ -1,0 +1,12 @@
+.*
+!.gitattributes
+!.gitignore
+
+# DOESN'T WORK
+# install/ igonres directory, making its content unknown to git
+
+# INSTEAD
+# ignore not install/, but each item of its content
+# this way we can "uignore" it
+/install/*
+!install/packages.xml

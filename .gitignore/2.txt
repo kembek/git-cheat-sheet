@@ -1,0 +1,28 @@
+# PATH-AWATE MODE
+/build/
+# build, but NOT /scripts/build
+
+# in slash mode match relative to .gitignore
+secret/key
+# secret/key, NOT docs/secret/key
+
+doc/*.html
+# doc/file.html, NOT somewhere/doc/file.html
+
+/*.txt
+# my.txt, NOT somewhere/my.txt
+
+# wildcard matches within a path segment
+var/www*/tmp
+# var/www/tmp
+# var/www-home/tmp
+# NOT var/www/info/tmp
+
+# ...or replace a path segment
+users/*/private
+# users/jj/private
+# users/katy/private
+# NOT
+# users/private
+# users/jj/image/private
+# script/users/jj/private

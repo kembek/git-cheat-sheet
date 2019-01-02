@@ -1,0 +1,16 @@
+# double wildcart ** replaces any number of path segments
+**/*.log
+# same as *.log
+
+**/app/cache
+# shop/app/cache
+# main/front/app/cache
+
+docs/**/*.html
+# docs/lala/foo/file.html
+# docs/bar/file.html
+# NOT scripts/docs/file.html
+
+# ** can only be used as **/...
+# or .../**/...
+# or .../**
