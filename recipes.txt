@@ -1,0 +1,8 @@
+git remote add <remoteRepositoryName> <url>
+  команда для добавления на удаленный репозиторий
+
+git pull origin master --allow-unrelated-histories
+git push origin master
+
+code file.txt
+code ../directory
