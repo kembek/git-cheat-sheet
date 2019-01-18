@@ -9,7 +9,7 @@ git branch <branchName>
         флаг для удаления ветки, если она в верхнем индексе она удалеят без предупреждения
         stx: git branch -d|-D fix
 
-git checkout <branchName> 
+git checkout [<branchName>|-- <file|catalog> ]
     для перехода на другую ветку (branchName)
     > -b --branch <branchName>
         при запуске команды с этим флагом и указав branchName, мы создаем ветку и переключаемся на нее
@@ -19,12 +19,26 @@ git checkout <branchName>
         stx: git checkout -f otherBranch
         также если мы добавили изменения в индекс можно удалить из с помощью команды, так как если не указывать название ветки то ставится текущия по умолчанию
         stx: git checkout -f
+    > git checkout -- index.html
+        отменяем все изменения в файле index.html 
+        !!!ВАЖНО: после выполнения этой команды изменения не вернуть
 
 git reflog <branchName>
     для показа истории ветки, если она не указана то всю историю всех веток до текущей истории
 
-git log 
+git log [-p|--stat|--pretty=[short|oneline|full|fuller]|--[short|oneline|full|fuller][--decorate]]
     для показа истории ветки
+    > git log -p [commitCount]
+        флаг -p используется для показа разниц между коммитами 
+        через commitCount можно ограничить число коммитов => git log -p -2
+    > git log --stat
+        для получения краткой статистики о коммитах
+    > git log --pretty=short
+        для форматирования вывода информации о коммитах
+    > git log --oneline
+    > git log --oneline --decorate
+        для просмотра куда указывает HEAD в ветке
+
 
 git gc 
     для запуска сборщика мусора
@@ -57,14 +71,3 @@ git merge <branchName>
     stx: git merge fix
     git branch -f master ORIG_HEAD -- для отката слияния
 
-Рецепт по передвижению ветки в ручную
-    git checkout <branchName>
-    git branch -f <branchName> <otherBranch|commitHash>
-    -- короткая запись, которая сама перейдет на другую ветку с на указанный хеш
-    git checkout -B <branchName> <commitHash>
-    stx: 
-        -- current branch: master
-        git checkout fix
-        git branch -f master 5434
-        ---------------------------
-        git checkout -B master 5424
