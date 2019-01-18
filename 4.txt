@@ -1,0 +1,43 @@
+
+git remote [-v]
+  просмотр удалённых репозиториев
+  > git remote -v
+  чтобы просмотреть адреса для чтения и записи, привязанные к репозиторию
+
+git remote add [shortname] [url]
+  Добавление удалённых репозиториев
+
+git remote show [remote-name]
+  Просмотр удаленного репозитория
+  > git remote show origin
+  для просмотра удаленного репозитория origin
+
+git remote rename <old_remote_name> <new_remote_name>
+  команда для переименования удаленных репозиторий
+  > git remote rename origin funFunOrigin
+
+git remote rm <remote_name>
+  команда для удаления ссылки на удаленный репозиторий
+  > git remote rm NLO_origin
+
+
+git fetch [remote-name]
+  получение изменений из удалённого репозитория
+  Важно отметить, что команда git fetch забирает данные в ваш локальный репозиторий, но не сливает их с какими-либо вашими наработками и не модифицирует то, над чем вы работаете в данный момент. 
+
+git pull
+  извлекает (fetch) данные с сервера, с которого вы изначально склонировали, и автоматически пытается слить (merge) их с кодом, над которым вы в данный момент работаете.
+
+
+git push [remote-name] [branch-name] [<remote_name> <localBranch>:<newBranchNameInRemoteRepo>]
+  для добавления изменений в удаленный репозиторий и в соответсвующую ветку
+    > git push -- краткая запись
+    > git push -u origin feature_branch_name
+      для добавления локальной ветки у репозиторий
+    > git push origin serverfix:awesomebranch
+      можно запушить локальную ветку(localBranch) 
+      с новым именем (newBranchNameInRemoteRepo) в удаленный репозиторий
+    > git push --delete <branch_name>
+      Удаление веток на удалённом сервере
+      git push --delete master
+    
