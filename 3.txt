@@ -8,6 +8,14 @@ git branch <branchName>
     > -d <branchName>
         флаг для удаления ветки, если она в верхнем индексе она удалеят без предупреждения
         stx: git branch -d|-D fix
+    > --merged 
+        флаг для просмотра списка слитых(объединенных) веток в текущую
+        -- current branch: master
+        stx: git branch --merged
+    > --un-merged 
+        флаг для просмотра списка не слитых(объединенных) веток в текущую
+        -- current branch: master
+        stx: git branch --merged
 
 git checkout [<branchName>|-- <file|catalog> ]
     для перехода на другую ветку (branchName)
@@ -70,4 +78,7 @@ git merge <branchName>
     -- current branch: master
     stx: git merge fix
     git branch -f master ORIG_HEAD -- для отката слияния
+    > git merge origin/serverfix
+        Чтобы слить наработки из удаленного репозитория
+        в свою текущую рабочую ветку 
 
