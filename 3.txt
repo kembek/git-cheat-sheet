@@ -16,6 +16,13 @@ git branch <branchName>
         флаг для просмотра списка не слитых(объединенных) веток в текущую
         -- current branch: master
         stx: git branch --merged
+    > -u --set-upstream-to
+        > git branch -u <remote server>/<branch>
+        Если уже есть локальная ветка и нужно настроить ее на удаленную ветку, которую вы только получили, или хотите изменить upstream-ветку, которую вы отслеживаете, вы можете воспользоваться ключами -u или --set-upstream-to
+        stx: git branch -u origin/master
+    > -vv
+        > git branch -vv
+        Отобразится список ваших локальных веток с дополнительной информацией, включая то, какая из веток отслеживается, и если локальная ветка опережает, отстает или равняется относительно основной ветки.
 
 git checkout [<branchName>|-- <file|catalog> ]
     для перехода на другую ветку (branchName)
@@ -57,6 +64,11 @@ git checkout [HEAD|commitHash|branchName] <paths>
         - git checkout index.html
         - git checkout -- master
         если имя папки похожа на ветку или коммит то нужно указать перед путем два дефиса
+    > git checkout -b [branchName] [remote server]/[branchName]
+        для добавления новой ветки в локальный репозиторий 
+        отслеживающую ветку из удаленного репозитория
+    > git checkout --track [remote server]/[branchName]
+        
 
 git stash 
     архивирует все изменения, также они достпуны в любой ветке. ВАЖНО!! Это команда не коммитит!
