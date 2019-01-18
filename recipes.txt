@@ -4,5 +4,26 @@ git remote add <remoteRepositoryName> <url>
 git pull origin master --allow-unrelated-histories
 git push origin master
 
+// открыть с помощью VSC
 code file.txt
 code ../directory
+
+// чтобы влить все изменения из любой (master) ветки в 1234-bug-login
+git checkout 1234-bug-login
+git rebase dev
+git push -f origin 1234-bug-login
+
+// Для красивого вывода истории в консоль
+git log --oneline --decorate --graph --all
+
+// Рецепт по передвижению ветки в ручную
+git checkout <branchName>
+git branch -f <branchName> <otherBranch|commitHash>
+  -- короткая запись, которая сама перейдет на другую ветку с на указанный хеш
+  git checkout -B <branchName> <commitHash>
+    stx: 
+      -- current branch: master
+      git checkout fix
+      git branch -f master 5434
+      ---------------------------
+      git checkout -B master 5424
