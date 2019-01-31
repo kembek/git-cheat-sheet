@@ -94,3 +94,16 @@ git merge <branchName>
         Чтобы слить наработки из удаленного репозитория
         в свою текущую рабочую ветку 
 
+git rebase [--onto ] [<mainBranch> ] [ [mainBranch] [thematicBranch]]
+    команда для перебазирования (т.е. берется снимок с mainBranch и объединяется поверх текущего)
+    > git checkout experiment <!-- current branch master -->
+      git rebase master
+    > git rebase [mainBranch] [thematicBranch]
+        можно объединить без предварительного перехода
+        > git rebase master server_fix
+    > git rebase --onto <mainBranch> <ignoreBranch> <thematicBranch>
+        перебазируется тематическая ветка на основе главного и игнорирую ветку написанную по середине
+
+
+
+

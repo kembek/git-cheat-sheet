@@ -37,7 +37,8 @@ git push [remote-name] [branch-name] [<remote_name> <localBranch>:<newBranchName
     > git push origin serverfix:awesomebranch
       можно запушить локальную ветку(localBranch) 
       с новым именем (newBranchNameInRemoteRepo) в удаленный репозиторий
-    > git push --delete <branch_name>
+    > git push [repoName]--delete <branch_name>
       Удаление веток на удалённом сервере
       git push --delete master
+      git push origin --delete master
     
