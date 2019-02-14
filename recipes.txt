@@ -27,3 +27,10 @@ git branch -f <branchName> <otherBranch|commitHash>
       git branch -f master 5434
       ---------------------------
       git checkout -B master 5424
+
+// save changes in remote branch
+git reset HEAD~50 --soft
+git reset HEAD .
+git stash push -m "Stash description"
+git checkout master
+git stack pop
