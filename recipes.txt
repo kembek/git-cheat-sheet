@@ -40,3 +40,6 @@ git checkout `git ls-files -m`
 
 // it is command for save password in store (It called credentials)
 git config --local credential.helper store
+
+// git clean all files
+git clean -fdx
