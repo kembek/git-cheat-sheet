@@ -1,0 +1,2 @@
+git config --global core.attributesFile ~/.gitattributes
+git config --global core.excludesFile ~/.gitignore

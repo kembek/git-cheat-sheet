@@ -34,3 +34,9 @@ git reset HEAD .
 git stash push -m "Stash description"
 git checkout master
 git stack pop
+
+// canceled all files if changed
+git checkout `git ls-files -m`
+
+// it is command for save password in store (It called credentials)
+git config --local credential.helper store

@@ -40,6 +40,9 @@ git help attributes
 git check-ignore -v <path>
     проверка игнорирования
 stx: git check-ignore -v package.json
+    удаление свойства секции
+
+git config --remove-section user 
 
 git config --global alias.c 'config' 
     создание алиаса для команды
