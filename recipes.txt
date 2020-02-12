@@ -43,3 +43,7 @@ git config --local credential.helper store
 
 // git clean all files
 git clean -fdx
+
+// git restore deleted files after commit
+git log --diff-filter=D --summary
+git checkout <hash-commit>~1 <your-lost-file-name>
